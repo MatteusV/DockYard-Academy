@@ -36,7 +36,7 @@ As developers, it's our job to translate business requirements into something th
 
 These exercises will have you convert a common formula into an Elixir program.
 
-## Loading Bar Percentage
+## Porcentagem da barra de carregamento
 
 We often need to display loading bars to the user. Loading bars use the current **percentage** they have finished loading in order to display the loading progress.
 
@@ -67,10 +67,13 @@ total = 42
 Enter your solution below.
 
 ```elixir
+actual = 12
+total = 42
 
+actual / total * 100
 ```
 
-## Rocket Ship
+## Foguete
 
 We're building a rocket ship app to teach people about physics.
 
@@ -93,7 +96,10 @@ mass * acceleration
 Enter your solution below.
 
 ```elixir
+mass = 10
+acceleration = 50
 
+mass * acceleration
 ```
 
 ## What Do You Tip?
@@ -117,7 +123,9 @@ initial_cost * tip_percent
 Enter your solution below.
 
 ```elixir
-
+initialCost = 20
+tip = 1.15
+tip * initialCost
 ```
 
 ## Pythagorean Theorum
@@ -141,7 +149,10 @@ a ** 2 + b ** 2
 Enter your solution below.
 
 ```elixir
+a = 4
+b = 10
 
+c = a ** 2 + b ** 2
 ```
 
 ## Bonus: Square Root
@@ -161,7 +172,7 @@ c_squared = 116
 Enter your solution below.
 
 ```elixir
-
+:math.sqrt(c)
 ```
 
 ## Commit Your Progress
