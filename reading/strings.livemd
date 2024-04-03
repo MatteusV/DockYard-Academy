@@ -80,7 +80,7 @@ In the Elixir cell below, create a string `"Hello, world!"`. This is a rite of p
 programmer.
 
 ```elixir
-
+"Hello, world"
 ```
 
 ## Multiline Strings
@@ -141,7 +141,8 @@ Replace `nil` with your answer.
 </details>
 
 ```elixir
-
+name = "Peter"
+"Hi" <> name
 ```
 
 ### String Interpolation
@@ -181,10 +182,10 @@ In the Elixir cell below, use **string interpolation** to say `I have #{X - 1} c
 </details>
 
 ```elixir
-answer = nil
+answer = "I have #{14 - 1} classmates"
 ```
 
-## Escaping Characters
+## Personagens escapando
 
 Elixir allows you to use [Escape Characters](https://hexdocs.pm/elixir/main/String.html#module-escape-characters) to represent special values in a string. We've already seen the `\n` escape character for a newline.
 
