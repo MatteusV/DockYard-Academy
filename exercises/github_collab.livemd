@@ -30,7 +30,7 @@ Mix.install([
 </div>
 </div>
 
-## Collab
+## Colaborar
 
 With a partner, you're going to create a collaborative GitHub project.
 
@@ -48,7 +48,7 @@ Decide on your role and complete the exercise.
 * **CREATOR**: Review the pull request and accept the changes.
 * **CREATOR**: pull the main branch and see the changes on your local git project.
 
-## Merge Conflicts
+## Mesclar conflitos
 
 Sometimes when you create a pull request, other pull requests may be accepted which creates
 merge conflicts.
