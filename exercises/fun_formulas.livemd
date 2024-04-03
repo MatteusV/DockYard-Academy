@@ -175,7 +175,7 @@ Enter your solution below.
 :math.sqrt(c)
 ```
 
-## Commit Your Progress
+## Comprometa seu progresso
 
 DockYard Academy now recommends you use the latest [Release](https://github.com/DockYard-Academy/curriculum/releases) rather than forking or cloning our repository.
 
