@@ -276,7 +276,7 @@ map = %{title: "terminar exercícios de mapas no elixir", completed: false}
 We can pattern match on values inside the map.
 
 ```elixir
-%{hello: my_variable} = %{hello: "world"}
+%{hello: %{teste: my_variable}} = %{hello: %{teste: "teste"}}
 my_variable
 ```
 
