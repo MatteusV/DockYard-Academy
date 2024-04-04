@@ -172,7 +172,35 @@ family_tree = arthur
 Enter your solution below.
 
 ```elixir
-
+%{
+  name: "Matteus Varlesse",
+  status: :child,
+  age: 20,
+  parents: [
+    %{
+      name: "Auxiliadora Maria Varlesse",
+      status: :grand_parent,
+      age: 68,
+      parents: [
+        %{
+          name: "Rafael Varlesse",
+          status: :child,
+          age: 40
+        },
+        %{
+          name: "Adriana Silva",
+          status: :child,
+          age: 44
+        },
+        %{
+          name: "Monica Silva",
+          status: :child,
+          age: 47
+        }
+      ]
+    }
+  ]
+}
 ```
 
 ## Commit Your Progress
