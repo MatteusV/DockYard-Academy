@@ -133,7 +133,13 @@ end
 Enter your solution below.
 
 ```elixir
+temperature = :rand.uniform(20)
 
+if temperature > 10 do
+  :hot
+else
+  :cold
+end
 ```
 
 ## Clear Control Flow
@@ -278,7 +284,7 @@ We can provide any number of cases. Cases use pattern matching to decide which r
 Return each value from `1` to `5` by changing the `condition` variable below.
 
 ```elixir
-condition = nil
+condition = [1, 2, 3]
 
 case condition do
   :red -> 1
@@ -317,7 +323,7 @@ If the values would throw a [MatchError](https://hexdocs.pm/elixir/MatchError.ht
 That's why the following `case` statement does not trigger the `"non-matching case"`.
 
 ```elixir
-case {:exactly, :equal} do
+case {:not_exactly, :equal} do
   {:not_exactly, :equal} -> "non-matching case"
   {:exactly, :equal} -> "matching case"
 end
@@ -378,7 +384,7 @@ end
 Return each result from `1` to `5` by changing the `condition` variable below.
 
 ```elixir
-condition = nil
+condition = {1, %{key1: [1]}}
 
 case condition do
   [1, 2, 3] -> 1
@@ -517,7 +523,14 @@ end
 </details>
 
 ```elixir
+grade = :rand.uniform(100)
 
+cond do
+  85 <= grade and grade <= 100 -> "A"
+  70 <= grade and grade <= 84 -> "B"
+  55 <= grade and grade <= 59 -> "C"
+  1 <= grade and grade <= 54 -> "D"
+end
 ```
 
 ## Unless
@@ -571,7 +584,12 @@ In the Elixir cell below
 * Create an `unless` statement. which returns `"awake"` unless `tired`.
 
 ```elixir
+tired = true
 
+unless tired do
+else
+  "awake"
+end
 ```
 
 ## Commit Your Progress
