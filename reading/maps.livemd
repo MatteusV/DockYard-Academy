@@ -214,9 +214,9 @@ map.hello
 You can update values in a map using `%{initial_map | updated_values}` syntax like so.
 
 ```elixir
-initial = %{key: "value"}
+initial = %{key: "value", name: "matteus", note: 10, approved: false}
 
-%{initial | key: "new value"}
+%{initial | approved: true}
 ```
 
 Elixir does not allow you to mutate values. That means
