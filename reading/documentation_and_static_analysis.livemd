@@ -121,7 +121,7 @@ defmodule DocTestExample do
       3
   """
   def add(int, int) do
-    2
+    int + int
   end
 end
 ```
