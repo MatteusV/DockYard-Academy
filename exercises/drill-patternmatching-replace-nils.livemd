@@ -30,7 +30,7 @@ Mix.install([
 </div>
 </div>
 
-## Replacing Nils
+## Substituindo Nils
 
 This exercise was inspired by Quentin Crain, one of our amazing DockYard Academy mentors.
 
