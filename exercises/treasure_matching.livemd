@@ -49,97 +49,79 @@ jewel
 Use pattern matching to bind a `jewel` variable to the `"jewel"` string. Each cell should return the `jewel` variable to prove it was bound correctly.
 
 ```elixir
-[_, _, _, string] = [1, 2, 3, "jewel"]
-string
+[1, 2, 3, "jewel"]
 ```
 
 ```elixir
-%{key1: _, key2: string} = %{key1: "value", key2: "jewel"}
-string
+%{key1: "value", key2: "jewel"}
 ```
 
 ```elixir
-%{1 => string} = %{1 => "jewel"}
-string
+%{1 => "jewel"}
 ```
 
 ```elixir
-%{%{key: _} => string} = %{%{key: [1, 2, 3, 4, 5, {}]} => "jewel"}
-string
+%{%{key: [1, 2, 3, 4, 5, {}]} => "jewel"}
 ```
 
 ```elixir
-%{north: %{south: %{west: %{east: string}}}} = %{north: %{south: %{west: %{east: "jewel"}}}}
-string
+%{north: %{south: %{west: %{east: "jewel"}}}}
 ```
 
 ```elixir
-[_, string] = [2, "jewel"]
-string
+[2, "jewel"]
 ```
 
 ```elixir
-[string | _tail] = ["jewel", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-string
+["jewel", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 ```
 
 ```elixir
-[_head, string | _] = [1, "jewel", 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-string
+[1, "jewel", 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 ```
 
 ```elixir
-[_, _, string | _] = [1, 2, "jewel", 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-string
+[1, 2, "jewel", 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 ```
 
 ```elixir
-[_, [_, [_, string]]] = [[], [1, [2, "jewel"]]]
-string
+[[], [1, [2, "jewel"]]]
 ```
 
 ```elixir
-string = "here is the jewel"
-string
+"here is the jewel"
 ```
 
 ```elixir
-{string} = {"jewel"}
+{"jewel"}
 ```
 
 ```elixir
-{string, _} = {"jewel", 1}
-string
+{"jewel", 1}
 ```
 
 ```elixir
-{_, _, string} = {1, 2, "jewel"}
-string
+{1, 2, "jewel"}
 ```
 
 ```elixir
-[string | _tail] = ["jewel"] ++ Enum.to_list(1..100)
-string
+["jewel"] ++ Enum.to_list(1..100)
 ```
 
 ```elixir
-[key: string] = [key: "jewel"]
-string
+[key: "jewel"]
 ```
 
 ```elixir
-[south: string, _] = [south: "jewel", east: {1, 2}]
-string
+[south: "jewel", east: {1, 2}]
 ```
 
 ```elixir
-[_, string | _tail] = Enum.map(1..4, fn each -> (each == 2 && "jewel") || each end)
-string
+Enum.map(1..4, fn each -> (each == 2 && "jewel") || each end)
 ```
 
 ```elixir
-[_, _, _, string] = Enum.map(1..4, &((&1 > 3 && "jewel") || &1))
-string
+Enum.map(1..4, &((&1 > 3 && "jewel") || &1))
 ```
 
 ## Sum
@@ -172,10 +154,6 @@ defmodule Sum do
   iex> Sum.list([1, 2, 3])
   6
   """
-
-  def list(list, sum \\ 0)
-  def list([], sum), do: sum
-  def list([head | tail], sum), do: list(tail, sum + head)
 end
 ```
 
