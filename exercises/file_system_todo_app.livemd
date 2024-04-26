@@ -67,44 +67,24 @@ Implement the `TodoList` module as documented. You may choose any file for your 
 
 ```elixir
 defmodule TodoList do
-  @moduledoc """
-  Documentation for `TodoList`
-  """
-  @doc """
-  Retrieve the todo list.
+  @storage "todolist"
 
-  ## Examples
-
-      iex> TodoList.list()
-      []
-  """
   def list do
+    case File.read(@storage) do
+      {:ok, list} -> :erlang.binary_to_term(list)
+      # other operations will create the storage if it does not yet exist.
+      _ -> []
+    end
   end
 
-  @doc """
-  Add an item to the todo list.
-
-  ## Examples
-
-      TodoList.add("task 1")
-      TodoList.add("task 2")
-      TodoList.list()
-      ["task 2", "task 1"]
-  """
   def add(item) do
+    new_list = [item | list()]
+    File.write(@storage, :erlang.term_to_binary(new_list))
   end
 
-  @doc """
-  Complete (remove) an item from the todo list.
-
-  ## Examples
-
-      TodoList.add("finish homework")
-      TodoList.complete("finish homework")
-      TodoList.list()
-      ["task 2", "task 1"]
-  """
   def complete(item) do
+    new_list = list() -- [item]
+    File.write(@storage, :erlang.term_to_binary(new_list))
   end
 end
 ```
