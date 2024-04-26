@@ -139,7 +139,7 @@ File.ls()
 To clean up the file, uncomment the following code which should remove it.
 
 ```elixir
-# File.rm("file.txt")
+File.rm("file.txt")
 ```
 
 Now the file should no longer exist. Let's check with [File.exists?/2](https://hexdocs.pm/elixir/File.html#exists?/2).
@@ -157,10 +157,10 @@ DO NOT DELETE IMPORTANT FILES ON YOUR SYSTEM WHEN USING THE FILE MODULE
 </div>
 
 ```elixir
-
+File.read!("file.txt")
 ```
 
-## Path Module Functions
+## Funções do módulo de caminho
 
 The [Path](https://hexdocs.pm/elixir/Path.html) module contains many useful functions for working with the paths to files.
 
