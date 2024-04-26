@@ -49,19 +49,23 @@ jewel
 Use pattern matching to bind a `jewel` variable to the `"jewel"` string. Each cell should return the `jewel` variable to prove it was bound correctly.
 
 ```elixir
-[1, 2, 3, "jewel"]
+[_, _, _, jewel] = [1, 2, 3, "jewel"]
+jewel
 ```
 
 ```elixir
-%{key1: "value", key2: "jewel"}
+%{key1: _, key2: jewel} = %{key1: "value", key2: "jewel"}
+jewel
 ```
 
 ```elixir
-%{1 => "jewel"}
+%{1 => jewel} = %{1 => "jewel"}
+jewel
 ```
 
 ```elixir
-%{%{key: [1, 2, 3, 4, 5, {}]} => "jewel"}
+%{%{key: _} => jewel} = %{%{key: [1, 2, 3, 4, 5, {}]} => "jewel"}
+jewel
 ```
 
 ```elixir
@@ -93,35 +97,43 @@ Use pattern matching to bind a `jewel` variable to the `"jewel"` string. Each ce
 ```
 
 ```elixir
-{"jewel"}
+{jewel} = {"jewel"}
+jewel
 ```
 
 ```elixir
-{"jewel", 1}
+{jewel, _} = {"jewel", 1}
+jewel
 ```
 
 ```elixir
-{1, 2, "jewel"}
+{_, _, jewel} = {1, 2, "jewel"}
+jewel
 ```
 
 ```elixir
-["jewel"] ++ Enum.to_list(1..100)
+[jewel | _] = ["jewel"] ++ Enum.to_list(1..100)
+jewel
 ```
 
 ```elixir
-[key: "jewel"]
+[key: jewel] = [key: "jewel"]
+jewel
 ```
 
 ```elixir
-[south: "jewel", east: {1, 2}]
+[jewel | _] = [south: "jewel", east: {1, 2}]
+jewel
 ```
 
 ```elixir
-Enum.map(1..4, fn each -> (each == 2 && "jewel") || each end)
+[_, jewel, _, _] = Enum.map(1..4, fn each -> (each == 2 && "jewel") || each end)
+jewel
 ```
 
 ```elixir
-Enum.map(1..4, &((&1 > 3 && "jewel") || &1))
+[_, _, _, jewel] = Enum.map(1..4, &((&1 > 3 && "jewel") || &1))
+jewel
 ```
 
 ## Sum
@@ -154,6 +166,9 @@ defmodule Sum do
   iex> Sum.list([1, 2, 3])
   6
   """
+  def list(list, sum \\ 0)
+  def list([], sum), do: sum
+  def list([head | tail], sum), do: list(tail, sum + head)
 end
 ```
 
