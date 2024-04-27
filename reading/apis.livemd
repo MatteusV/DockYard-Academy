@@ -472,7 +472,19 @@ IO.puts(message)
 </details>
 
 ```elixir
-
+request =
+  Finch.build(
+    :post,
+    "https://api.openai.com/v1/chat/completions",
+    [
+      {"Content-Type", "application/json"},
+      {"Authorization", "Bearer sk-1WHDb0NwRkq3mfyRVparT3BlbkFJ500axJFd8pZ2RKxGJ0x"}
+    ],
+    Jason.encode!(%{
+      mode: "gpt-3.5-turbo",
+      messages: [%{role: "user", content: "Hello!"}]
+    })
+  )
 ```
 
 ## Commit Your Progress
