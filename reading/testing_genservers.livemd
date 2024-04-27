@@ -200,7 +200,7 @@ ExUnit.run()
 
 For more on testing [GenServer](https://hexdocs.pm/elixir/GenServer.html)s, there is an excellent talk by Tyler Young.
 
-<!-- livebook:{"attrs":{"source":"YouTube.new(\"https://www.youtube.com/watch?v=EZFLPG7V7RM\")","title":"Testing GenServers"},"chunks":null,"kind":"Elixir.HiddenCell","livebook_object":"smart_cell"} -->
+<!-- livebook:{"attrs":"eyJzb3VyY2UiOiJZb3VUdWJlLm5ldyhcImh0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9RVpGTFBHN1Y3Uk1cIikiLCJ0aXRsZSI6IlRlc3RpbmcgR2VuU2VydmVycyJ9","chunks":null,"kind":"Elixir.HiddenCell","livebook_object":"smart_cell"} -->
 
 ```elixir
 YouTube.new("https://www.youtube.com/watch?v=EZFLPG7V7RM")
